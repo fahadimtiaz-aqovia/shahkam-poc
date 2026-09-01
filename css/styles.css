@@ -296,6 +296,47 @@
 .exec-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
 @media(max-width:900px){.exec-kpis{grid-template-columns:repeat(2,1fr)}}
 
+/* Interactive stepped module flow */
+.journey.stepper .jstep{background:transparent;border:0;font:inherit;color:inherit;cursor:pointer;text-align:left;border-radius:7px;padding:4px 8px;transition:.14s}
+.journey.stepper .jstep:hover{background:#eef6f5}
+.journey.stepper .jstep:hover b{color:var(--teal)}
+/* Stage nav placed alongside the numbered stepper at the top */
+.stage-top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+.stage-top .journey.stepper{flex:1 1 300px;min-width:260px;margin-bottom:0}
+.stage-top .stage-footer{border:0;margin:0;padding:0;gap:8px;flex:0 0 auto;justify-content:flex-end}
+.stage-top .stage-footer>span:empty{display:none}
+@media(max-width:760px){.stage-top .stage-footer{width:100%;justify-content:space-between}}
+.stage-footer{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:22px;padding-top:16px;border-top:1px solid var(--line)}
+.stage-footer .primary{padding:11px 20px;font-size:12px}
+.stage-footer .secondary{padding:11px 16px;font-size:12px}
+.stage-intro{background:#f0f8f7;border-left:3px solid var(--teal);border-radius:0 8px 8px 0;padding:12px 14px;color:#3d5250;font-size:12.5px;line-height:1.6;margin:0 0 16px}
+.feas-details{margin-top:16px;border:1px solid var(--line);border-radius:10px;background:#fbfdfd;overflow:hidden}
+.feas-details summary{cursor:pointer;font:700 12px Manrope;color:#285a59;padding:13px 15px;list-style:none}
+.feas-details summary::-webkit-details-marker{display:none}
+.feas-details summary:before{content:"▸ ";color:#8aa8a3}
+.feas-details[open] summary:before{content:"▾ "}
+.feas-details[open] summary{border-bottom:1px solid var(--line)}
+.feas-details .card.panel{border:0;box-shadow:none;border-radius:0}
+
+/* Floating live-chat dock */
+.chat-dock{position:fixed;right:22px;bottom:22px;width:362px;max-width:calc(100vw - 28px);height:520px;max-height:calc(100vh - 96px);background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 24px 60px rgba(12,36,39,.30);display:none;flex-direction:column;overflow:hidden;z-index:45}
+.chat-dock.open{display:flex}
+.chat-dock .cd-head{display:flex;align-items:center;justify-content:space-between;background:#12363a;color:#eafaf7;padding:12px 14px;flex:0 0 auto}
+.chat-dock .cd-title{font:700 13px Manrope}
+.chat-dock .cd-tools{display:flex;gap:5px}
+.chat-dock .cd-tools button{background:#ffffff1f;color:#eafaf7;border-radius:6px;width:26px;height:26px;font-size:13px;line-height:1}
+.chat-dock .cd-tools button:hover{background:#ffffff36}
+.chat-dock .cd-body{flex:1;overflow:auto;padding:13px;background:#f8fbfb}
+.chat-dock .cd-body .message{max-width:93%;font-size:11.5px}
+.chat-dock .cd-suggest{display:flex;flex-wrap:wrap;gap:6px;padding:9px 12px;border-top:1px solid var(--line);background:#fff;flex:0 0 auto}
+.chat-dock .cd-suggest button{border:1px solid #dce8e7;background:#fff;border-radius:14px;padding:6px 10px;font-size:10.5px;color:#42605e}
+.chat-dock .cd-suggest button:hover{border-color:#8fc7c0;background:#f1f9f8}
+.chat-dock .cd-compose{margin:0;padding:10px 12px;border-top:1px solid var(--line);background:#fff;flex:0 0 auto}
+.floating-ai.hidden{display:none}
+/* AI Assistant step highlight */
+.adv-hl{outline:3px solid #5fc9bd;outline-offset:3px;border-radius:10px;box-shadow:0 0 0 5px rgba(95,201,189,.16);transition:outline-color .25s,box-shadow .25s}
+@media(max-width:520px){.chat-dock{right:8px;bottom:8px;width:auto;left:8px;height:68vh}}
+
 /* Header tour utility button */
 .tour-btn{padding:9px 13px;background:#fff;border:1px solid #cbd9d8;color:#285a59;border-radius:6px;font-weight:700;font-size:11px;transition:.18s;white-space:nowrap}
 .tour-btn:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-1px)}
